@@ -22,11 +22,15 @@ steps:
     mavenPomFile: 'pom.xml'
     goals: 'install'
     artifactoryResolverService: 'idani25artifactory'
-    targetResolveReleaseRepo: 'maven-libs-release'
-    targetResolveSnapshotRepo: 'maven-libs-snapshot'
+    targetResolveReleaseRepo: 'eytanr-libs-release'
+    targetResolveSnapshotRepo: 'eytanr-libs-snapshot'
     artifactoryDeployService: 'idani25artifactory'
-    targetDeployReleaseRepo: 'maven-libs-release'
-    targetDeploySnapshotRepo: 'maven-libs-snapshot'
+    targetDeployReleaseRepo: 'eytanr-libs-release'
+    targetDeploySnapshotRepo: 'eytanr-libs-snapshot'
+    collectBuildInfo: true
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    includeEnvVars: true
     javaHomeOption: 'JDKVersion'
 
 - task: JFrogBuildScan@1
