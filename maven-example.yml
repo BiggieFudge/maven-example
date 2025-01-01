@@ -34,7 +34,8 @@ steps:
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     includeEnvVars: true
-    jdkVersionOption: '1.17'
+    javaHomeOption: 'JDKVersion'
+
 
 - task: JFrogPublishBuildInfo@1
   inputs:
