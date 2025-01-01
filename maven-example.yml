@@ -1,0 +1,39 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+- task: JFrogMaven@1
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'install'
+    artifactoryResolverService: 'idani25artifactory'
+    targetResolveReleaseRepo: 'maven-libs-release'
+    targetResolveSnapshotRepo: 'maven-libs-snapshot'
+    artifactoryDeployService: 'idani25artifactory'
+    targetDeployReleaseRepo: 'maven-libs-release'
+    targetDeploySnapshotRepo: 'maven-libs-snapshot'
+    javaHomeOption: 'JDKVersion'
+
+- task: JFrogBuildScan@1
+  inputs:
+    xrayConnection: 'idani25'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    allowFailBuild: true
+    vuln: true
