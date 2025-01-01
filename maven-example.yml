@@ -18,12 +18,19 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+- task: JFrogMaven@1
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'install'
 
+    filterDeployedArtifacts: true
+    javaHomeOption: 'JDKVersion'
 
 - task: JFrogMaven@1
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'clean install -X'
+    goals: 'clean install'
+    options: '-X'
     artifactoryResolverService: 'idani25artifactory'
     targetResolveReleaseRepo: 'eytanr-libs-release'
     targetResolveSnapshotRepo: 'eytanr-libs-snapshot'
