@@ -17,10 +17,12 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+
+
 - task: JFrogMaven@1
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'install'
+    goals: 'clean install -X'
     artifactoryResolverService: 'idani25artifactory'
     targetResolveReleaseRepo: 'eytanr-libs-release'
     targetResolveSnapshotRepo: 'eytanr-libs-snapshot'
@@ -33,6 +35,11 @@ steps:
     includeEnvVars: true
     javaHomeOption: 'JDKVersion'
 
+- task: JFrogPublishBuildInfo@1
+  inputs:
+    artifactoryConnection: 'idani25artifactory'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
 - task: JFrogBuildScan@1
   inputs:
     xrayConnection: 'idani25'
