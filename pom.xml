@@ -36,7 +36,7 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <!-- Problematic version from log: 3.14.0 (fix attempted for 3.18.0) -->
-            <version>3.14.0</version>
+            <version>3.18.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
