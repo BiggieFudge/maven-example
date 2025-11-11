@@ -89,6 +89,8 @@ jobs:
           # Fails the Frogbot task if any security issue is found.
           # JF_FAIL: "FALSE"
 
+          JFROG_CLI_LOG_LEVEL: DEBUG
+
           # [Optional]
           # Frogbot will download the project dependencies, if they're not cached locally. To download the
           # dependencies from a virtual repository in Artifactory, set the name of the repository. There's no
