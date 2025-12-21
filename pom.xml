@@ -48,7 +48,7 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
             <!-- Problematic version from log: 1.25.0 (fix attempted for 1.26.0) -->
-            <version>1.25.0</version>
+            <version>1.26.0</version>
         </dependency>
     </dependencies>
     <build>
