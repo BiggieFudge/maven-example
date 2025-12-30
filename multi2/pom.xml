@@ -6,14 +6,13 @@
         <artifactId>multi</artifactId>
         <version>3.7-SNAPSHOT</version>
     </parent>
-
     <properties>
         <daversion>${project.parent.version}</daversion>
+        <fake.secret>fake_secret_123456</fake.secret> <!-- Fake secret for demonstration -->
+        <fake.password>fake_password_abcdef</fake.password> <!-- Fake password for demonstration -->
     </properties>
-
     <artifactId>multi2</artifactId>
     <version>3.7-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Multi 2</name>
-
 </project>
