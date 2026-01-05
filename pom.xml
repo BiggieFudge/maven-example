@@ -36,19 +36,19 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <!-- Problematic version from log: 3.14.0 (fix attempted for 3.18.0) -->
-            <version>3.14.0</version>
+            <version>3.13.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <!-- Problematic version from log: 5.2.5 (fix attempted for 5.4.0) -->
-            <version>5.2.5</version>
+            <version>5.2.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
             <!-- Problematic version from log: 1.25.0 (fix attempted for 1.26.0) -->
-            <version>1.25.0</version>
+            <version>1.24.0</version>
         </dependency>
     </dependencies>
     <build>
